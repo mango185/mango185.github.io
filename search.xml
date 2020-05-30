@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>RobotFramework自动化环境搭建</title>
+    <url>/post/9af7d3f8.html</url>
+    <content><![CDATA[<h1 id="一、下载安装python最新版"><a href="#一、下载安装python最新版" class="headerlink" title="一、下载安装python最新版"></a>一、下载安装python最新版</h1><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line">附上官网：</span><br><span class="line"><span class="symbol">    https:</span><span class="comment">//www.python.org/</span></span><br></pre></td></tr></table></figure>
+
+<p>下载完成后，双击运行安装软件</p>
+<p>勾选 Add Python 3.7 to PATH</p>
+<p>然后点击 Install Now 选择默认安装位置即可</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">安装完成后，打开<span class="keyword">cmd</span><span class="bash">命令行，输入python，进行验证。出现python版本信息，证明安装成功，环境变量成功添加</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="二、使用pip命令进行后续安装"><a href="#二、使用pip命令进行后续安装" class="headerlink" title="二、使用pip命令进行后续安装"></a>二、使用pip命令进行后续安装</h1><p>打开cmd，依次输入：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span><span class="selector-class">.pip</span> install -<span class="selector-tag">i</span> https:<span class="comment">//pypi.douban.com/simple/ wxPython</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span><span class="selector-class">.pip</span> install -<span class="selector-tag">i</span> https:<span class="comment">//pypi.douban.com/simple/ robotframework </span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span><span class="selector-class">.pip</span> install -<span class="selector-tag">i</span> https:<span class="comment">//pypi.douban.com/simple/ robotframework-selenium2library</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span><span class="selector-class">.pip</span> install -<span class="selector-tag">i</span> https:<span class="comment">//pypi.douban.com/simple/ robotframework-ride</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">ps</span>：使用豆瓣镜像依次安装</span><br><span class="line">    wxPython    Robot framework     robotframework-<span class="keyword">selenium2library </span>    RIDE</span><br></pre></td></tr></table></figure>
+
+<p>双击Python37\Scripts路径下的ride.py文件，即可打开RIDE的运行界面<br>当然也可以通过使用命令 ride.py 打开</p>
+]]></content>
+      <tags>
+        <tag>自动化测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux命令</title>
     <url>/post/82734d8.html</url>
     <content><![CDATA[<h1 id="linux常用命令："><a href="#linux常用命令：" class="headerlink" title="linux常用命令："></a>linux常用命令：</h1><h4 id="小技巧："><a href="#小技巧：" class="headerlink" title="小技巧："></a>小技巧：</h4><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">上下箭头可以选择历史的命令</span><br><span class="line"><span class="literal">tab</span>键可以自动补全文件名</span><br></pre></td></tr></table></figure>
@@ -52,27 +73,6 @@
 <h3 id="25-ln命令-在文件之间创建链接"><a href="#25-ln命令-在文件之间创建链接" class="headerlink" title="25.ln命令  在文件之间创建链接"></a>25.ln命令  在文件之间创建链接</h3><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">该命令在文件之间创建链接。这种操作实际上是给系统中已有的某个文件指定另外一个可用于访问它的名称。对于这个新的文件名，我们可以为之指定不同的访问权限，以控制对信息的共享和安全性的问题。</span><br><span class="line"></span><br><span class="line"><span class="built_in">ln</span>的链接分软链接和硬链接两种：</span><br><span class="line">    softlink   <span class="meta">#软连接</span></span><br><span class="line">    hardlink   <span class="meta">#硬连接</span></span><br><span class="line">    <span class="number">1</span>、软链接就是：“<span class="built_in">ln</span> –s 源文件 目标文件”，只会在选定的位置上生成一个文件的镜像，不会占用磁盘空间，类似与windows的快捷方式。</span><br><span class="line">    <span class="number">2</span>、硬链接<span class="built_in">ln</span>源文件目标文件，没有参数-s， 会在选定的位置上生成一个和源文件大小相同的文件，无论是软链接还是硬链接，文件都保持同步变化。</span><br><span class="line">    </span><br><span class="line"><span class="built_in">ln</span> –s 源文件 目标文件</span><br><span class="line"><span class="built_in">ln</span>   源文件 目标文件</span><br><span class="line"><span class="built_in">ln</span> -s / /home/sns</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>RobotFramework自动化环境搭建</title>
-    <url>/post/9af7d3f8.html</url>
-    <content><![CDATA[<h1 id="一、下载安装python最新版"><a href="#一、下载安装python最新版" class="headerlink" title="一、下载安装python最新版"></a>一、下载安装python最新版</h1><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line">附上官网：</span><br><span class="line"><span class="symbol">    https:</span><span class="comment">//www.python.org/</span></span><br></pre></td></tr></table></figure>
-
-<p>下载完成后，双击运行安装软件</p>
-<p>勾选 Add Python 3.7 to PATH</p>
-<p>然后点击 Install Now 选择默认安装位置即可</p>
-<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">安装完成后，打开<span class="keyword">cmd</span><span class="bash">命令行，输入python，进行验证。出现python版本信息，证明安装成功，环境变量成功添加</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="二、使用pip命令进行后续安装"><a href="#二、使用pip命令进行后续安装" class="headerlink" title="二、使用pip命令进行后续安装"></a>二、使用pip命令进行后续安装</h1><p>打开cmd，依次输入：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span><span class="selector-class">.pip</span> install -<span class="selector-tag">i</span> https:<span class="comment">//pypi.douban.com/simple/ wxPython</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span><span class="selector-class">.pip</span> install -<span class="selector-tag">i</span> https:<span class="comment">//pypi.douban.com/simple/ robotframework </span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span><span class="selector-class">.pip</span> install -<span class="selector-tag">i</span> https:<span class="comment">//pypi.douban.com/simple/ robotframework-selenium2library</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span><span class="selector-class">.pip</span> install -<span class="selector-tag">i</span> https:<span class="comment">//pypi.douban.com/simple/ robotframework-ride</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">ps</span>：使用豆瓣镜像依次安装</span><br><span class="line">    wxPython    Robot framework     robotframework-<span class="keyword">selenium2library </span>    RIDE</span><br></pre></td></tr></table></figure>
-
-<p>双击Python37\Scripts路径下的ride.py文件，即可打开RIDE的运行界面<br>当然也可以通过使用命令 ride.py 打开</p>
-]]></content>
-      <tags>
-        <tag>自动化测试</tag>
       </tags>
   </entry>
   <entry>
