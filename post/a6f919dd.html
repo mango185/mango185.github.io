@@ -1,0 +1,363 @@
+<!-- build time:Sun Aug 20 2023 15:27:39 GMT+0800 (中国标准时间) --><!DOCTYPE html><html class="theme-next pisces use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#222"><script async src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link href="//cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="https://fonts.loli.net/css?family=EB+Garamond:400,400i,700,700i|Noto+Serif+SC:400,500,700&display=swap&subset=chinese-simplified" rel="stylesheet"><link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico?v=5.1.4"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4"><link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222"><meta name="keywords" content="数据类型,变量,Java,运算符,"><meta name="description" content="一、变量什么是变量？在一定范围内，可以发生变化的量变量的定义格式：格式一：（直接定义） 数据类型  变量名  &#x3D;  数据; int       a      &#x3D;  12;  格式二：（间接定义） 数据类型  变量名; 变量名  &#x3D;  数据; int    i; i  &#x3D;  12;二、数据类型Java中数据类型的分类：2大类4小类8小种基本数据类型：4类8种整型：     byte（1个字节）"><meta property="og:type" content="article"><meta property="og:title" content="【Java学习】004_变量&amp;数据类型&amp;数据类型转换&amp;ASCII编码&amp;运算符"><meta property="og:url" content="https://mango185.github.io/post/a6f919dd.html"><meta property="og:site_name" content="Mango"><meta property="og:description" content="一、变量什么是变量？在一定范围内，可以发生变化的量变量的定义格式：格式一：（直接定义） 数据类型  变量名  &#x3D;  数据; int       a      &#x3D;  12;  格式二：（间接定义） 数据类型  变量名; 变量名  &#x3D;  数据; int    i; i  &#x3D;  12;二、数据类型Java中数据类型的分类：2大类4小类8小种基本数据类型：4类8种整型：     byte（1个字节）"><meta property="og:image" content="https://img-blog.csdnimg.cn/abd6e861223d40f292caf74604f07746.jpeg"><meta property="og:image" content="https://img-blog.csdnimg.cn/533352b1b95f46eba0b171ea9292118d.png"><meta property="og:image" content="https://img-blog.csdnimg.cn/46f9d21e5d2248fa8de370682ae24d8e.jpeg"><meta property="og:image" content="https://img-blog.csdnimg.cn/c4c88c8d1c1e48e0a7cb32237dee47ca.png"><meta property="og:image" content="https://img-blog.csdnimg.cn/81282408cf3d45829f4f283f929afc9e.png"><meta property="og:image" content="https://img-blog.csdnimg.cn/a8f59c94a0b142bbb95d8a4a73a26123.png"><meta property="article:published_time" content="2023-08-20T06:57:55.000Z"><meta property="article:modified_time" content="2023-08-20T07:15:56.340Z"><meta property="article:author" content="Mango"><meta property="article:tag" content="数据类型"><meta property="article:tag" content="变量"><meta property="article:tag" content="Java"><meta property="article:tag" content="运算符"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://img-blog.csdnimg.cn/abd6e861223d40f292caf74604f07746.jpeg"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Pisces",version:"5.1.4",sidebar:{position:"left",display:"post",offset:12,b2t:!1,scrollpercent:!1,onmobile:!0},fancybox:!0,tabs:!0,motion:{enable:!0,async:!0,transition:{post_block:"flipYIn",post_header:"perspectiveRightIn",post_body:"perspectiveLeftIn",coll_header:"swoopIn",sidebar:"shrinkIn"}},duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><link rel="canonical" href="https://mango185.github.io/post/a6f919dd.html"><script></script><meta name="baidu-site-verification" content="cCbz5MGt3a"><meta name="baidu-site-verification" content="0h5gQEOl7O"><meta name="baidu-site-verification" content="HGjiEsFNpl"><title>【Java学习】004_变量&数据类型&数据类型转换&ASCII编码&运算符 | Mango</title><meta name="generator" content="Hexo 4.2.1"></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><a href="https://github.com/mango185" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA;color:#fff;position:absolute;top:0;border:0;right:0" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Mango</span> <span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description">静静努力，静静收获</h1></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-links"><a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-link"></i><br>友链</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i> </span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://mango185.github.io/post/a6f919dd.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="Mango"><meta itemprop="description" content=""><meta itemprop="image" content="/images/mango139.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Mango"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">【Java学习】004_变量&数据类型&数据类型转换&ASCII编码&运算符</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-08-20T14:57:55+08:00">2023-08-20 </time><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-calendar-check-o"></i> </span><span class="post-meta-item-text">更新于&#58;</span> <time title="更新于" itemprop="dateModified" datetime="2023-08-20T15:15:56+08:00">2023-08-20 </time></span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span> </a></span></span><span class="post-comments-count"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-comment-o"></i> </span><a href="/post/a6f919dd.html#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/post/a6f919dd.html" itemprop="commentCount"></span></a></span><br><span class="post-wordcount"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i> </span><span class="post-meta-item-text">字数&#58;</span> <span title="字数">2.5k </span><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i> </span><span class="post-meta-item-text">时长 &asymp;</span> <span title="时长">11 分钟</span></span></div></header><div class="post-body" itemprop="articleBody"><h1 id="一、变量"><a href="#一、变量" class="headerlink" title="一、变量"></a>一、变量</h1><p>什么是变量？</p><pre><code>在一定范围内，可以发生变化的量</code></pre><p>变量的定义格式：</p><pre><code>格式一：（直接定义）
+数据类型  变量名  =  数据;
+int       a      =  12;
+
+格式二：（间接定义）
+数据类型  变量名;
+变量名  =  数据;
+int    i;
+i  =  12;</code></pre><h1 id="二、数据类型"><a href="#二、数据类型" class="headerlink" title="二、数据类型"></a>二、数据类型</h1><p>Java中数据类型的分类：</p><pre><code>2大类4小类8小种</code></pre><p>基本数据类型：4类8种</p><pre><code>整型：
+    byte（1个字节）
+    short（2个字节）
+    int（4个字节）
+    long（8个字节）
+    一个整数，默认的数据类型是int
+
+浮点型：
+    float（4个字节）
+    double（8个字节）
+
+字符型：
+    char（2个字节）
+
+布尔型：
+    boolean（1个字节）</code></pre><blockquote><p><img src="https://img-blog.csdnimg.cn/abd6e861223d40f292caf74604f07746.jpeg" alt="在这里插入图片描述"></p></blockquote><pre><code>输入：
+package com;
+
+public class demo01 {
+    public static void main(String[] args) {
+        // 定义一个byte类型的变量
+        byte a = 12;
+        System.out.println(a);
+
+        // 定义一个short类型的变量
+        short b;
+        b = 13;
+        System.out.println(b);
+
+        // 定义一个int类型的变量
+        int c = 1;
+        System.out.println(c);
+
+        // 定义一个long类型的变量
+        long d = 2;
+        System.out.println(d);
+
+        // 定义一个float类型的变量
+        float e = 3.14f;  // 需要加个大写或小写的F
+        System.out.println(e);
+
+        // 定义一个double类型的变量
+        double f = 3.14;
+        System.out.println(f);
+
+        // 定义一个char类型的变量
+        char g = &apos;a&apos;;
+        System.out.println(g);
+
+        //定义一个boolean类型的变量
+        boolean h = true;
+        System.out.println(h);
+        boolean i = false;
+        System.out.println(i);
+
+        // 定义两个int类型的变量
+        int j = 1;
+        int k = 2;
+
+        int l = 1, m = 2;
+
+        int n,o;
+        n = 1;
+        o = 2;
+    }
+}
+
+输出：
+12
+13
+1
+2
+3.14
+3.14
+a
+true
+false</code></pre><p>注：在使用变量的时候需要注意的问题</p><pre><code>1. 当我们给float类型变量赋值的时候，要在数据的后面加上F或f
+2. 当我们给long类型变量赋值的时候，建议在后面加上L或l
+3. 当我们想要使用某个变量的时候，一定要先赋值，再使用，否则会报错
+4. 当我们想要给某个变量赋值的时候，要考虑该变量的范围，否则会报错
+5. 在同一对花括号内，不能定义同名变量</code></pre><p>引用数据类型：（后面介绍）</p><h1 id="三、数据类型的转换"><a href="#三、数据类型的转换" class="headerlink" title="三、数据类型的转换"></a>三、数据类型的转换</h1><h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><p>什么是隐式类型转换？</p><pre><code>就是指小的数据类型会自动提升为大的数据类型
+
+    byte b = 1;
+    short s = 2;
+    int i = 3;
+    long l = 4;
+    float f = 3.14f;
+    double d = 3.15;
+    double dd = b + s + i + l + d;
+    当多个数据类型参与运算的时候，小的数据类型会自动提升为大的数据类型</code></pre><p>注：<strong>boolean类型不能和其他数据类型相互转换</strong></p><pre><code>byte b1 = 1;
+byte b2 = 2;
+byte b3 = b1 + b2;
+System.out.println(b3); // 编译报错
+
+byte b1 = 1;
+byte b2 = b1 + 2;
+System.out.println(b2); // 编译报错
+
+// 结论：针对byte和short类型的时候，只有右边有一个是变量，就会编译报错
+
+byte b4 = 126 + 1;
+System.out.println(b4);  // 正确
+
+byte b5 = 127 + 1;
+System.out.println(b5);  // 报错</code></pre><h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><p>什么是强制类型转换？</p><blockquote><p>是指大的数据类型被强制转换成小的数据类型</p></blockquote><p>强制类型转换的格式：</p><blockquote><p>小的数据类型 小的数据类型的变量名 = (小的数据类型)大的数据类型的变量名;</p></blockquote><p>eg:</p><pre><code>int i = 110;
+byte b = (byte)i</code></pre><p>注：<strong>能不使用强制转换，尽量不要使用，因为转不好会出现问题</strong></p><pre><code>int i = 130;
+byte b = (byte)i;
+System.out.println(b);  // -126</code></pre><p><img src="https://img-blog.csdnimg.cn/533352b1b95f46eba0b171ea9292118d.png" alt="在这里插入图片描述"></p><h1 id="四、ASCII编码表"><a href="#四、ASCII编码表" class="headerlink" title="四、ASCII编码表"></a>四、ASCII编码表</h1><pre><code>&apos;a&apos; --&gt; 97，b、c、d、……累加
+&apos;A&apos; --&gt; 65，B、C、D、……累加
+&apos;0&apos; --&gt; 32，1、2、3、……累加
+
+char c = &apos;a&apos;;
+int i = 1;
+int a = i + c;
+System.out.println(a); // 98   ----&gt;  &apos;a&apos; &gt;&gt;&gt;97
+
+System.out.println(&apos; &apos; + 0); // 32 ----&gt; &apos; &apos; &gt;&gt;&gt;32
+System.out.println(&apos;0&apos; + 0); // 48 ---&gt; &apos;0&apos; &gt;&gt;&gt;48</code></pre><p><img src="https://img-blog.csdnimg.cn/46f9d21e5d2248fa8de370682ae24d8e.jpeg" alt="在这里插入图片描述"></p><h1 id="五、运算符"><a href="#五、运算符" class="headerlink" title="五、运算符"></a>五、运算符</h1><h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><pre><code>+
+    在Java中的含义：
+        1. 加减乘除的加
+        2. 正负的正
+        3. 连接符
+            任意数据类型的数据与字符串相连接的时候，那个+号就是连接符
+               System.out.println(1 + &quot;abc&quot;); // &quot;1abc&quot;
+                System.out.println(&quot;abc&quot; + 1); // &quot;abc1&quot;
+                System.out.println(true + &quot;abc&quot;); // &quot;trueabc&quot;
+                System.out.println(&apos;a&apos; + &quot;abc&quot;); // &quot;aabc&quot;
+
+                int i = 1;
+                int j = 2;
+                System.out.println(i + &quot;abc&quot; + j); // &quot;1abc&quot; + j ---&gt; &quot;1abc2&quot;
+
+                // 已知有两个变量a和b，值分别为1和2，输出 a + b = 3，1 + 2 = 3
+                int a = 1;
+                int b = 2;
+                System.out.println(&quot;a + b = &quot; + (a + b)); // a + b = 3
+                System.out.println(a + &quot; + &quot; + b + &quot; = &quot; + (a + b)); // 1 + 2 = 3
+
+-
+
+*
+
+/
+    整数除以整数，结果仍是整数
+       int i1 = 5;
+        int j1 = 2;
+        int a1 = i1 / j1;
+        System.out.println(a1); // 2
+
+        int i2 = 5;
+        int j2 = 2;
+        double a2 = i2 / j2;
+        System.out.println(a2); // 2.0
+
+        int i3 = 5;
+        double j3 = 2;
+        double a3 = i3 / j3;
+        System.out.println(a3); // 2.5
+
+%
+    取余
+        int i = 3;
+        int j = 2;
+        int k = 1;
+        System.out.println(i % j); // 1
+        System.out.println(j % i); // 2
+        System.out.println(i % k); // 0
+
+++
+    单独使用：
+        int i1 = 1;
+        int i2= 1;
+        int j1 = 2;
+        int j2 = 2;
+        i1++;
+        ++i2;
+        j1++;
+        ++j2;
+        System.out.println(i1); // 2
+        System.out.println(i2); // 2
+        System.out.println(j1); // 3
+        System.out.println(j2); // 3
+        不管++是在前还是在后，结果都是加1
+
+    参与运算：
+        ++在前：先自身加1，然后再参与运算
+            int i = 1;
+            int j = ++i;
+            System.out.println(i); // 2
+            System.out.println(j); // 2
+        ++在后，先参与运算，然后再自身加1
+            int i = 1;
+            int j = i++;
+            System.out.println(j); // 1
+            System.out.println(i); // 2
+
+    注：
+        byte b = 1;
+        b = b + 1;
+        System.out.println(b); // 报错
+
+        byte b = 1;
+        b++; // b = (byte)(b + 1); ++自身带有强制转换
+        System.out.println(b); // 2
+
+--
+    单独使用：
+        int i1 = 1;
+        int i2= 1;
+        int j1 = 2;
+        int j2 = 2;
+        i1--;
+        --i2;
+        j1--;
+        --j2;
+        System.out.println(i1); // 0
+        System.out.println(i2); // 0
+        System.out.println(j1); // 1
+        System.out.println(j2); // 1
+        不管--是在前还是在后，结果都是减1
+
+    参与运算：
+        --在前：先自身减1，然后再参与运算
+            int i = 1;
+            int j = --i;
+            System.out.println(i); // 0
+            System.out.println(j); // 0
+        --在后，先参与运算，然后再自身减1
+            int i = 1;
+            int j = i--;
+            System.out.println(j); // 1
+            System.out.println(i); // 0
+
+    int i = 10;
+    int j = i++ + ++i + i-- + --i;
+    // int a = i++; // a=10, i=11
+    // int b = ++i; // i=12, b=12
+    // int c = i--; // c=12, i=11
+    // int d = --i; // i=10, d=10
+    // int j = a + b + c + d; // j = 10 + 12 + 12 + 10 = 44
+    System.out.println(j); // 44</code></pre><h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><pre><code>=
+
++=
+    int i = 1;
+    i += 2;
+    System.out.println(i); // 3
+
+-=
+    int i = 1;
+    i -= 2;
+    System.out.println(i); // -1
+
+*=
+    int i = 2;
+    i *= 3;
+    System.out.println(i); // 6
+
+/=
+    int i = 8;
+    i /= 2;
+    System.out.println(i); // 4
+
+%=
+    int i = 8;
+    i %= 3;
+    System.out.println(i); // 2</code></pre><p>注：<strong>++，–，+=，-=，*=，/=，%= 都自带了强制类型转换</strong></p><h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><p>关系运算符输出的结果一定是boolean类型，也就是说要么是true，要么是false</p><pre><code>&gt;
+&lt;
+&gt;=
+&lt;=
+!=
+==</code></pre><h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><p>左右两边的数据的数据类型都是boolean类型，结果也是boolean类型</p><pre><code>&amp;（单与）：两边只要有一个是false，结果就为false
+    System.out.println(true &amp; true); // true
+    System.out.println(true &amp; false); // false
+    System.out.println(false &amp; false); // false
+    System.out.println(false &amp; true); // false
+
+|（单或）：两边只要有一个是true，结果就为true
+    System.out.println(true | true); // true
+    System.out.println(true | false); // true
+    System.out.println(false | false); // false
+    System.out.println(false | true); // true
+
+^（异或）：两边相同为false，两边不同为true
+    System.out.println(true ^ true); // false
+    System.out.println(true ^ false); // true
+    System.out.println(false ^ false); // false
+    System.out.println(false ^ true); // true
+
+!（非）：
+    System.out.println(!true); // false
+    System.out.println(!false); // true
+    System.out.println(!!true); // true
+    System.out.println(!!!true); // false
+
+&amp;&amp;（双与）：同&amp;（单与）：两边只要有一个是false，结果就为false
+    System.out.println(true &amp;&amp; true); // true
+    System.out.println(true &amp;&amp; false); // false
+    System.out.println(false &amp;&amp; false); // false
+    System.out.println(false &amp;&amp; true); // false
+
+||（双或）：同|（单或）：两边只要有一个是true，结果就为true
+    System.out.println(true || true); // true
+    System.out.println(true || false); // true
+    System.out.println(false || false); // false
+    System.out.println(false || true); // true</code></pre><p>&amp;和&amp;&amp;的区别，|和||的区别</p><pre><code>&amp;&amp;：如果左边为false，右边就不再执行了，结果就为false
+&amp;：如果左边为false，右边依然会执行，结果就为false
+
+||：如果左边为true，右边就不再执行了，结果就为true
+|：如果左边为true，右边依然会执行，结果就为false
+
+推荐使用&amp;&amp;和||，提高执行效率</code></pre><h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p>左右两边的数据都是数字，结果也为数字</p><pre><code>&amp;（与位运算）：
+    System.out.println(3 &amp; 2); // 2
+
+|（或位运算）：
+    System.out.println(3 | 2); // 3
+
+^（异或位运算）：
+    System.out.println(3 ^ 2); // 1
+
+        // 实现i和j的调换
+        int i = 1;
+        int j = 2;
+        System.out.println(i + &quot;...&quot; + j); // 1...2
+
+        // 方法一：
+        int temp = i;
+        i = j;
+        j = temp;
+        System.out.println(i + &quot;...&quot; + j); // 2...1
+
+        // 方法二：
+        i = i ^ j;
+        j = i ^ j;
+        i = i ^ j;
+        System.out.println(i + &quot;...&quot; + j); // 2...1
+
+~（按位取反）：
+
+&gt;&gt;（右移位运算）：
+    System.out.println(3 &gt;&gt; 2); // 0
+
+&lt;&lt;（左移位运算）：
+    System.out.println(3 &lt;&lt; 2); // 12
+
+&gt;&gt;&gt;（无符号右移）：
+    System.out.println(3 &gt;&gt;&gt; 2); // 0</code></pre><blockquote><p><img src="https://img-blog.csdnimg.cn/c4c88c8d1c1e48e0a7cb32237dee47ca.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/81282408cf3d45829f4f283f929afc9e.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/a8f59c94a0b142bbb95d8a4a73a26123.png" alt="在这里插入图片描述"></p></blockquote><h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><p>三元运算符，也称条件运算符、三目运算符<br>格式：<strong>条件表达式 ？表达式1 : 表达式2;</strong><br>执行流程：</p><blockquote><p>如果条件表达式为true，就会执行表达式1，不会执行表达式2<br>如果条件表达式为false，就会执行表达式2，不会执行表达式1</p></blockquote><pre><code>public class demo09 {
+    public static void main(String[] args) {
+        // 获取两个数的最大值
+        int i = 2;
+        int j = 3;
+        int max = i &gt; j ? i : j;
+        System.out.println(max); // 3
+        System.out.println(i &gt; j ? i : j); // 3
+    }
+}</code></pre><p>注意事项：</p><blockquote><ol><li>三元运算符是一个运算符，既然是一个运算符，就一定会有一个结果，所以表达式1和表达式2都会得到一个结果，所以表达式1和表达式2中不能是输出语句：<br>3 &gt; 2 ? System.out.println(“hehe”) : System.out.println(“haha”); // 格式错误</li><li>表达式1和表达式2既然会得到一个结果，如果传递给一个变量去接收，该变量的数据类型应该和表达式1和表达式2的结果的数据类型匹配：<br>double d = 3 &gt; 2 ? 1 : 2;<br>System.out.println(d); // 1.0<br>——————————————<br>int c = 3 &gt; 2 ? ‘a’ : ‘b’;<br>System.out.println(c); // 97<br>——————————————<br>char c1 = 3 &gt; 2 ? 97 : 98;<br>System.out.println(c1); // a</li></ol></blockquote></div><div class="popular-posts-header"><i class="fa fa-graduation-cap"></i> 相关文章</div><details><summary>点击查看</summary><ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><a href="\post\3c142be0.html" rel="bookmark">一、变量与基本数据类型</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="\post\1ddaf41.html" rel="bookmark">二十一、函数的数据类型</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="\post\fce38183.html" rel="bookmark">十二、类型转换</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="\post\e83f571f.html" rel="bookmark">十一、逻辑运算符</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="\post\5e08a536.html" rel="bookmark">十、比较运算符</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="\post\8c67c94e.html" rel="bookmark">九、数学运算符</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="\post\83cfe65e.html" rel="bookmark">八、小案例：用户输入一个3位数，弹出各个数位的和</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="\post\f542d68e.html" rel="bookmark">七、小案例：鸡兔同笼</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="\post\95f5a867.html" rel="bookmark">六、小案例：小小加法计算器</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="\post\d86d461c.html" rel="bookmark">五、数据类型</a></div></li></ul></details><div><div class="my_post_copyright"><script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script><script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script><script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script><link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css"><p><span>本文标题:</span>【Java学习】004_变量&数据类型&数据类型转换&ASCII编码&运算符</p><p><span>文章作者:</span>Mango</p><p><span>发布时间:</span>2023年08月20日 - 14:57:55</p><p><span>最后更新:</span>2023年08月20日 - 15:15:56</p><p><span>原始链接:</span><a href="/post/a6f919dd.html" title="【Java学习】004_变量&数据类型&数据类型转换&ASCII编码&运算符">https://mango185.github.io/post/a6f919dd.html</a> <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://mango185.github.io/post/a6f919dd.html" aria-label="复制成功！"></i></span></p><p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p></div><script>var clipboard=new Clipboard(".fa-clipboard");clipboard.on("success",$(function(){$(".fa-clipboard").click(function(){swal({title:"",text:"复制成功",html:!1,timer:500,showConfirmButton:!1})})}))</script></div><div><div><div class="read-over">-------------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------------</div></div></div><footer class="post-footer"><div class="post-tags"><a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="tag"><i class="fa fa-tag"></i> 数据类型</a> <a href="/tags/%E5%8F%98%E9%87%8F/" rel="tag"><i class="fa fa-tag"></i> 变量</a> <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a> <a href="/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="tag"><i class="fa fa-tag"></i> 运算符</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/post/ff50366c.html" rel="prev" title="【Java学习】003_注释&关键字&标识符&常量&进制&原码反码补码"><i class="fa fa-chevron-left"></i> 【Java学习】003_注释&关键字&标识符&常量&进制&原码反码补码</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/post/a2cf3827.html" rel="next" title="【Java学习】005_键盘录入Scanner&条件判断if/switch&局部代码块">【Java学习】005_键盘录入Scanner&条件判断if/switch&局部代码块 <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class="post-spread"><div data-weibo-title="分享到微博" data-qq-title="分享到QQ" data-douban-title="分享到豆瓣" class="social-share" class="share-component" data-disabled="qzone,google+,linkedin" data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣...">分享到：</div></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div id="sidebar-dimmer"></div><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="/"><img class="site-author-image" itemprop="image" src="/images/mango139.png" alt="Mango"></a><p class="site-author-name" itemprop="name">Mango</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">215</span> <span class="site-state-item-name">文章</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/index.html"><span class="site-state-item-count">28</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/index.html"><span class="site-state-item-count">211</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="links-of-author motion-element"><span class="links-of-author-item"><a rel="external nofollow" href="https://github.com/mango185" target="_blank" title="GitHub"><i class="fa fa-fw fa-fab fa-github"></i></a> </span><span class="links-of-author-item"><a rel="external nofollow" href="mailto:mango185@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i></a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-block"><div class="links-of-blogroll-title"><i class="fa fa-history fa-" aria-hidden="true"></i> 近期文章</div><ul class="links-of-blogroll-list"><li class="my-links-of-blogroll-li"><a href="/post/109f1629.html" title="【Java学习】002_IDE集成开发环境" target="_blank">【Java学习】002_IDE集成开发环境</a></li><li class="my-links-of-blogroll-li"><a href="/post/ff50366c.html" title="【Java学习】003_注释&关键字&标识符&常量&进制&原码反码补码" target="_blank">【Java学习】003_注释&关键字&标识符&常量&进制&原码反码补码</a></li><li class="my-links-of-blogroll-li"><a href="/post/a6f919dd.html" title="【Java学习】004_变量&数据类型&数据类型转换&ASCII编码&运算符" target="_blank">【Java学习】004_变量&数据类型&数据类型转换&ASCII编码&运算符</a></li><li class="my-links-of-blogroll-li"><a href="/post/a2cf3827.html" title="【Java学习】005_键盘录入Scanner&条件判断if/switch&局部代码块" target="_blank">【Java学习】005_键盘录入Scanner&条件判断if/switch&局部代码块</a></li><li class="my-links-of-blogroll-li"><a href="/post/5489d185.html" title="【Java学习】006_循环：for/while/do...while" target="_blank">【Java学习】006_循环：for/while/do...while</a></li></ul></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、变量"><span class="nav-text">一、变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数据类型"><span class="nav-text">二、数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、数据类型的转换"><span class="nav-text">三、数据类型的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐式类型转换"><span class="nav-text">隐式类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强制类型转换"><span class="nav-text">强制类型转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、ASCII编码表"><span class="nav-text">四、ASCII编码表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、运算符"><span class="nav-text">五、运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算数运算符"><span class="nav-text">算数运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值运算符"><span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系运算符"><span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算"><span class="nav-text">逻辑运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位运算符"><span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三元运算符"><span class="nav-text">三元运算符</span></a></li></ol></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2023</span> <span class="with-love"><i class="fa fa-heartbeat"></i> </span><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-area-chart"></i> </span><span class="post-meta-item-text">Site words total count&#58;</span> <span title="Site words total count">231k</span></div><div class="busuanzi-count"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="site-uv">我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友， </span><span class="site-pv">历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span></div></div></footer></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.ui.min.js"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script id="ribbon" type="text/javascript" size="60" alpha="0.6" zindex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="/js/src/Valine.min.js"></script><script type="text/javascript">if(new Valine({lang:"zh-cn",admin_email:"mango185@163.com",el:"#comments",appId:"C5ld1vyjmqGkWu7Fng8nRT7e-gzGzoHsz",appKey:"UD4Xhf5xnl9EPJAxbAWoR9TS",emoticon_url:"https://cdn.jsdelivr.net/gh/leafjame/cdn/emoji",emoticon_list:["大佬.gif","点赞.gif","尴尬.gif","鼓掌.gif","笑哭.gif","害羞.gif","黑人问号.gif","坏笑.gif","惊吓.gif","可爱.gif","抠鼻子.gif","流汗.gif","色.gif","吐血.gif","无奈.gif","huaji.png","liuhanhuaji.png","mojinghuaji.png","coshuaji.png","shounuehuaji.png","jizhi.png","doge.png","chigua.png","motion_1016.png","motion_1012.png","motion_1017.png","f_hufen.png","f_geili.png","f_jiong.png","f_meng.png","f_shenma.png","f_v5.png","c_onef.png","c_onem.png","c_fivem.png","c_oney.png","c_teny.png","c_oy.png","1f60a.png","1f60b.png","1f60d.png","1f60e.png","1f61a.png","1f62d.png","1f601.png","1f602.png","1f605.png","1f606.png","1f607.png","1f618.png","1f630.png","1f631.png","1f632.png","1f633.png","1f63e.png","1f63f.png","1f638.png","1f639.png","zhayanjian.gif","ciya.gif","xieyanxiao.gif","huaixiao.gif","xiaoku.gif","leiben.gif","penxue.gif","hanxiao.gif","baiyan.gif","cahan.gif","fadai.gif","haixiu.gif","haqian.gif","ku.gif","liuhan.gif","OK.gif","qiang.gif","woshou.gif","baoquan.gif","qiudale.gif","se.gif","yinxian.gif","yun.gif","zaijian.gif"],placeholder:"&#x270d;&nbsp;写评论"}),window.location.hash)var checkExist=setInterval(function(){$(window.location.hash).length&&($("html, body").animate({scrollTop:$(window.location.hash).offset().top-90},1e3),clearInterval(checkExist))},100)</script><script type="text/javascript">function proceedsearch(){$("body").append('<div class="search-popup-overlay local-search-pop-overlay"></div>').css("overflow","hidden"),$(".search-popup-overlay").click(onPopupClose),$(".popup").toggle();var t=$("#local-search-input");t.attr("autocapitalize","none"),t.attr("autocorrect","off"),t.focus()}var isfetched=!1,isXml=!0,search_path="search.xml";0===search_path.length?search_path="search.xml":/json$/i.test(search_path)&&(isXml=!1);var path="/"+search_path,onPopupClose=function(t){$(".popup").hide(),$("#local-search-input").val(""),$(".search-result-list").remove(),$("#no-result").remove(),$(".local-search-pop-overlay").remove(),$("body").css("overflow","")},searchFunc=function(t,e,o){"use strict";$("body").append('<div class="search-popup-overlay local-search-pop-overlay"><div id="search-loading-icon"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div></div>').css("overflow","hidden"),$("#search-loading-icon").css("margin","20% auto 0 auto").css("text-align","center"),$.ajax({url:t,dataType:isXml?"xml":"json",async:!0,success:function(t){isfetched=!0,$(".popup").detach().appendTo(".header-inner");var n=isXml?$("entry",t).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get():t,r=document.getElementById(e),s=document.getElementById(o),a=function(){var t=r.value.trim().toLowerCase(),e=t.split(/[\s\-]+/);e.length>1&&e.push(t);var o=[];if(t.length>0&&n.forEach(function(n){function r(e,o,n,r){for(var s=r[r.length-1],a=s.position,i=s.word,l=[],h=0;a+i.length<=n&&0!=r.length;){i===t&&h++,l.push({position:a,length:i.length});var p=a+i.length;for(r.pop();0!=r.length&&(s=r[r.length-1],a=s.position,i=s.word,p>a);)r.pop()}return c+=h,{hits:l,start:o,end:n,searchTextCount:h}}function s(t,e){var o="",n=e.start;return e.hits.forEach(function(e){o+=t.substring(n,e.position);var r=e.position+e.length;o+='<b class="search-keyword">'+t.substring(e.position,r)+"</b>",n=r}),o+=t.substring(n,e.end)}var a=!1,i=0,c=0,l=n.title.trim(),h=l.toLowerCase(),p=n.content.trim().replace(/<[^>]+>/g,""),u=p.toLowerCase(),f=decodeURIComponent(n.url),d=[],g=[];if(""!=l&&(e.forEach(function(t){function e(t,e,o){var n=t.length;if(0===n)return[];var r=0,s=[],a=[];for(o||(e=e.toLowerCase(),t=t.toLowerCase());(s=e.indexOf(t,r))>-1;)a.push({position:s,word:t}),r=s+n;return a}d=d.concat(e(t,h,!1)),g=g.concat(e(t,u,!1))}),(d.length>0||g.length>0)&&(a=!0,i=d.length+g.length)),a){[d,g].forEach(function(t){t.sort(function(t,e){return e.position!==t.position?e.position-t.position:t.word.length-e.word.length})});var v=[];0!=d.length&&v.push(r(l,0,l.length,d));for(var $=[];0!=g.length;){var C=g[g.length-1],m=C.position,x=C.word,w=m-20,y=m+80;0>w&&(w=0),y<m+x.length&&(y=m+x.length),y>p.length&&(y=p.length),$.push(r(p,w,y,g))}$.sort(function(t,e){return t.searchTextCount!==e.searchTextCount?e.searchTextCount-t.searchTextCount:t.hits.length!==e.hits.length?e.hits.length-t.hits.length:t.start-e.start});var T=parseInt("1");T>=0&&($=$.slice(0,T));var b="";b+=0!=v.length?"<li><a href='"+f+"' class='search-result-title'>"+s(l,v[0])+"</a>":"<li><a href='"+f+"' class='search-result-title'>"+l+"</a>",$.forEach(function(t){b+="<a href='"+f+'\'><p class="search-result">'+s(p,t)+"...</p></a>"}),b+="</li>",o.push({item:b,searchTextCount:c,hitCount:i,id:o.length})}}),1===e.length&&""===e[0])s.innerHTML='<div id="no-result"><i class="fa fa-search fa-5x" /></div>';else if(0===o.length)s.innerHTML='<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>';else{o.sort(function(t,e){return t.searchTextCount!==e.searchTextCount?e.searchTextCount-t.searchTextCount:t.hitCount!==e.hitCount?e.hitCount-t.hitCount:e.id-t.id});var a='<ul class="search-result-list">';o.forEach(function(t){a+=t.item}),a+="</ul>",s.innerHTML=a}};r.addEventListener("input",a),$(".local-search-pop-overlay").remove(),$("body").css("overflow",""),proceedsearch()}})};$(".popup-trigger").click(function(t){t.stopPropagation(),isfetched===!1?searchFunc(path,"local-search-input","local-search-result"):proceedsearch()}),$(".popup-btn-close").click(onPopupClose),$(".popup").click(function(t){t.stopPropagation()}),$(document).on("keyup",function(t){var e=27===t.which&&$(".search-popup").is(":visible");e&&onPopupClose()})</script><script>!function(){var t=document.createElement("script"),s=window.location.protocol.split(":")[0];"https"===s?t.src="https://zz.bdstatic.com/linksubmit/push.js":t.src="http://push.zhanzhang.baidu.com/push.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}()</script><script async src="/js/cursor/text.js"></script><script src="/js/src/activate-power-mode.min.js"></script><script>POWERMODE.colorful=!0,POWERMODE.shake=!1,document.body.addEventListener("input",POWERMODE)</script><script async language="javascript">function show_run_time(){window.setTimeout("show_run_time()",1e3),BirthDay=new Date("05/05/2020 20:00:00"),today=new Date,timeold=today.getTime()-BirthDay.getTime(),sectimeold=timeold/1e3,secondsold=Math.floor(sectimeold),msPerDay=864e5,e_daysold=timeold/msPerDay,daysold=Math.floor(e_daysold),e_hrsold=24*(e_daysold-daysold),hrsold=setzero(Math.floor(e_hrsold)),e_minsold=60*(e_hrsold-hrsold),minsold=setzero(Math.floor(60*(e_hrsold-hrsold))),seconds=setzero(Math.floor(60*(e_minsold-minsold))),div.innerHTML="我已在此等候你 <span style='color: #1890ff'> "+daysold+" </span> 天 <span style='color: #1890ff'>"+hrsold+" </span>时 <span style='color: #1890ff'>"+minsold+" </span>分 <span style='color: #1890ff'>"+seconds+" </span>秒 ",document.querySelector(".footer-inner").insertBefore(div,copyright.nextSibling)}function setzero(e){return 10>e&&(e="0"+e),e}var div=document.createElement("div"),copyright=document.querySelector(".theme-info2")||document.querySelector(".copyright");show_run_time()</script><style>.cube_container{width:50px;height:60px;margin:0 auto;position:fixed;z-index:999;-webkit-perspective:1000px;perspective:1000px;right:0;bottom:0;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.cube{width:0%;position:absolute;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;-webkit-transform:rotateX(-15deg) rotateY(-20deg) translateZ(-100px);transform:rotateX(-15deg) rotateY(-20deg) translateZ(-100px);-webkit-transform-origin:center center -100px;transform-origin:center center -100px;-webkit-animation:around 5s cubic-bezier(.94,-.6,.45,1.31) infinite;animation:around 5s cubic-bezier(.94,-.6,.45,1.31) infinite}.cube div{width:50px;height:50px;display:block;margin:0;position:absolute}.cube div a{color:#fff;font-size:12px;text-decoration:none;text-align:center;position:fixed;top:50%;left:45%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.cube .front{-webkit-transform:rotateY(0) translateZ(25px);transform:rotateY(0) translateZ(25px);background-color:rgba(0,191,255,.7);border:1px solid rgba(0,191,255,.7)}.cube .back{-webkit-transform:rotateX(180deg) translateZ(25px);transform:rotateX(180deg) translateZ(25px);background-color:rgba(124,252,0,.7);border:1px solid rgba(124,252,0,.7)}.cube .left{-webkit-transform:rotateY(-90deg) translateZ(25px);transform:rotateY(-90deg) translateZ(25px);background-color:rgba(255,215,0,.7);border:1px solid rgba(255,215,0,.7)}.cube .right{-webkit-transform:rotateY(90deg) translateZ(25px);transform:rotateY(90deg) translateZ(25px);background-color:rgba(255,69,0,.7);border:1px solid rgba(255,69,0,.7)}.cube .top{-webkit-transform:rotateX(90deg) translateZ(25px);transform:rotateX(90deg) translateZ(25px);background-color:rgba(255,0,157,.7);border:1px solid rgba(255,0,157,.7)}.cube .bottom{-webkit-transform:rotateX(-90deg) translateZ(25px);transform:rotateX(-90deg) translateZ(25px);background-color:rgba(184,111,220,.7);border:1px solid rgba(184,111,220,.7)}@-webkit-keyframes around{100%{-webkit-transform:rotateX(-15deg) rotateY(-380deg) translateZ(-100px);transform:rotateX(-15deg) rotateY(-380deg) translateZ(-100px)}}@keyframes around{100%{-webkit-transform:rotateX(-15deg) rotateY(-380deg) translateZ(-100px);transform:rotateX(-15deg) rotateY(-380deg) translateZ(-100px)}}</style><div class="cube_container"><div class="cube"><div class="front"><a onclick="back2top()" rel="nofollow">欢迎光临</a></div><div class="back"><a onclick="back2top()" rel="nofollow">❤️</a></div><div class="right"><a onclick="back2top()" rel="nofollow">Mango小站</a></div><div class="left"><a onclick="back2top()" role="button" rel="nofollow">请多关照</a></div><div class="top"><a onclick="back2top()" role="button" rel="nofollow">❤️</a></div><div class="bottom"><a onclick="back2top()" role="button" rel="nofollow">❤️</a></div></div></div><script>function back2top(){$("html, body").animate({scrollTop:0},500)}</script><script async type="text/javascript" src="/figlet/fetch.min.js"></script><script type="text/javascript" src="/figlet/figlet.js"></script><script type="text/javascript">figlet.defaults({fontPath:"/figlet/fonts"}),figlet("Welcome To Mango","Big Money-ne",function(o,e){return o?(console.log("something went wrong..."),void console.dir(o)):void console.log(e)})</script><script async type="text/javascript">var text="Welcome To Mango",date="2023-08-20";console.log("%c "+text,"font-size:100px;color:white;border-radius:20px;height:200px; background:-webkit-linear-gradient(yellow,orange,red,green,blue,purple);text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);"),console.info("\n %c Mango Site %c https://mango185.github.io/ \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;"),console.info("\n %c Mango QQ %c 3108386147 \n","color: #fadfa3; background: #030307; padding:5px 0;","background: #fadfa3; padding:5px 0;"),console.log("%c Time: "+date,"font-size:100px;white:"+fcolor+";border-radius:20px;height:200px; background:-webkit-linear-gradient(yellow,orange,red,green,blue,purple);text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);  background-image: linear-gradient(to right, orangered, orange, gold, lightgreen, cyan, dodgerblue, mediumpurple, hotpink, orangered);"),console.log("%c .","padding:300px 600px;line-height:10px;background:url(https://s1.ax1x.com/2020/05/31/t1elN9.png) no-repeat;")</script><script async src="/live2d-widget/autoload.js"></script><script async type="text/javascript" src="/js/src/clipboard.min.js"></script><script async type="text/javascript" src="/js/src/clipboard-use.js"></script><link async rel="stylesheet" href="/sharejs/css/share.min.css"><script async src="/sharejs/js/social-share.min.js"></script><script async type="text/javascript" src="/js/src/linkcard.js"></script></body></html><!-- rebuild by neat -->
